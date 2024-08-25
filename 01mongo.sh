@@ -35,22 +35,22 @@ CHECK $? "copying mongo repo"
 
 dnf install mongodb-org -y &>> $LOGFILE
 
-CHECK() $? "installing mongodb"
+CHECK $? "installing mongodb"
 
 systemctl enable mongod &>> $LOGFILE
 
-CHECK() $? "enabaling mongodb"
+CHECK $? "enabaling mongodb"
 
 systemctl start mongod &>> $LOGFILE
 
-CHECK() $? "started mongodb"
+CHECK $? "started mongodb"
 
 #changing mongobd host ip using sed(streamline editor ) very powerful
 
 sed -i 's/127.0.0.1 to 0.0.0.0g' /etc/mongod.conf &>> $LOGFILE
 
-CHECK() $? " setting remote access to mongodb"
+CHECK $? " setting remote access to mongodb"
 
 systemctl restart mongod &>> $LOGFILE
 
-CHECK() $? "restarting mongodb"
+CHECK $? "restarting mongodb"
