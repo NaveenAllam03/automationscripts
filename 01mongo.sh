@@ -12,19 +12,19 @@ N="\e[0m"
 CHECK(){
     if [ $1 -ne 0 ]
     then
-       echo " $2 $R failed..$N "
+       echo -e " $2 $R failed..$N "
        exit 1 
     else
-       echo " $2 $G sucessfull..$N"   
+       echo -e " $2 $G sucessfull..$N"   
     fi
 }
 
 if [ $user -ne 0 ]
 then
-   echo " $R switch to root user and run commands $N"
+   echo -e " $R switch to root user and run commands $N"
    exit 1
 else
-   echo " $G starting the installation... $N"
+   echo -e " $G starting the installation... $N"
 fi   
 
 cp mongo.repo  /etc/yum.repos.d/mongo.repo
