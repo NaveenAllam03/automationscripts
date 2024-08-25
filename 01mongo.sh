@@ -47,9 +47,9 @@ CHECK $? "started mongodb"
 
 #changing mongobd host ip using sed(streamline editor ) very powerful
 
-sed -i 's/127.0.0.1 to 0.0.0.0g' /etc/mongod.conf &>> $LOGFILE
+sed -i 's/127.0.0.1 to 0.0.0.0/g' /etc/mongod.conf &>> $LOGFILE
 
-CHECK $? " setting remote access to mongodb"
+CHECK $? "setting remote access to mongodb"
 
 systemctl restart mongod &>> $LOGFILE
 
