@@ -11,7 +11,7 @@ N="\e[0m"
 
 # set -xe --> used to debug the code 
 
-LOGFILE="/home/centos-$0.log"
+LOGFILE="/home/centos/$0.log"
 CHECK(){
     if [ $1 -ne 0 ]
     then
