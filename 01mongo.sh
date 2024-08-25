@@ -29,21 +29,27 @@ else
 fi   
 
 cp mongo.repo  /etc/yum.repos.d/mongo.repo
+
 CHECK $? "copying mongo repo"
 
 dnf install mongodb-org -y 
+
 CHECK() $? "installing mongodb"
 
 systemctl enable mongod 
+
 CHECK() $? "enabaling mongodb"
 
 systemctl start mongod
+
 CHECK() $? "started mongodb"
 
 #changing mongobd host ip using sed(streamline editor ) very powerful
 
 sed -i 's/127.0.0.1 to 0.0.0.0g' /etc/mongod.conf
+
 CHECK() $? " setting remote access to mongodb"
 
 systemctl restart mongod 
+
 CHECK() $? "restarting mongodb"
