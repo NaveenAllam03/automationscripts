@@ -9,7 +9,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-set -xe
+# set -xe --> used to debug the code 
 
 LOGFILE="/home/centos-$0.log"
 CHECK(){
